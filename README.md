@@ -1,25 +1,22 @@
-# ⚡ Enterprise Workflow Automation Portfolio
+# 🤖 CloudFlow Tier-1 Support & Escalation Engine
 
-**Developer:** Zeeshan Sohail (zeeautomate)
-**Program:** MATalogics AI Automation Internship
+## 📑 System Architecture
+This project deploys a bounded conversational AI agent to handle front-line SaaS customer support. The system is designed to eliminate LLM hallucinations by strictly querying a predefined knowledge base. When issues exceed the knowledge parameters or a user requests human intervention, the system autonomously extracts user data, applies NLP intent detection to classify ticket priority, and routes the payload to a database and Slack alerting system.
 
-## 🌐 Overview
-This repository contains the system architectures, JavaScript logic, and database schemas for a series of high-level workflow automations developed during the MATalogics engineering sprint. The focus of these builds is eliminating manual data entry, applying custom compute logic for decision-making, and routing critical data securely.
+## 🧩 Tech Stack
+* **Conversational Frontend:** Zapier Chatbots (RAG / Knowledge Base)
+* **NLP & Intent Detection:** AI by Zapier (GPT-4o-mini Data Extraction)
+* **Conditional Logic:** Paths by Zapier (4-tier priority branching)
+* **Database Logging:** Zapier Tables
+* **Team Alerting:** Slack API
 
-## 🚀 Projects Included
+## ⚙️ Core Engineering Highlights
 
-### 1. [Automated Lead Intake & Routing Pipeline](./lead-routing-pipeline)
-A zero-touch sales pipeline that captures raw form data, calculates dynamic Lead Scores using custom JavaScript, logs the enriched data to a CRM table, and conditionally routes "Hot" leads directly to a Slack channel.
+### 1. Zero-Hallucination Prompting
+The agent is constrained by strict rules. If a user queries information outside the knowledge base, it triggers a hardcoded fallback protocol: *"I don't have enough information to answer that accurately. I can create a support request for you."*
 
-### 2. [Employee Expense Approval & Risk Engine](./expense-approval-system)
-An automated financial compliance system that processes employee expense requests. It utilizes a custom JS compute node to categorize financial risk (Low/Medium/High) and checks for required file attachments, routing the requests through distinct approval paths based on the exact risk criteria.
+### 2. Autonomous NLP Extraction
+The workflow parses unstructured natural language from the chat transcript. A compute node analyzes the context to instantly extract the `Customer Name`, `Email`, and a summary of the `Issue`.
 
-## 🛠️ Core Technology Stack
-*   **Trigger & Capture:** Zapier Interfaces
-*   **Compute Logic:** Code by Zapier (JavaScript ES6)
-*   **Database:** Zapier Tables
-*   **Conditional Routing:** Paths & Filters by Zapier
-*   **Communication:** Slack API
-
----
-*Visit the individual project folders for detailed documentation, logic breakdowns, and system configuration screenshots.*
+### 3. Dynamic Priority Routing
+Extracted data is evaluated against strict business rules to autonomously assign priority (e.g., "System completely down" = `Critical`). The engine then uses conditional paths to log the enriched ticket to the database and selectively dispatch Slack alerts.
