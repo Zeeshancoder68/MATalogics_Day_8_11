@@ -1,0 +1,11 @@
+Subject: Daily Operations Report - Action Required
+
+HIGH PRIORITY
+1. $12,000 deal hasn't moved for 5 days.
+2. Customer XYZ has a critical unresolved ticket.
+3. Ahmad has 7 overdue tasks.
+
+RECOMMENDED ACTIONS
+- Follow up with XYZ.
+- Escalate support ticket.
+- Reassign 2 tasks.

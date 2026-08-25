@@ -1,0 +1,10 @@
+DATABASE SCHEMAS FOR AI OPERATIONS MANAGER
+
+1. Sales Table
+Columns: Customer, Deal, Amount, Stage, Owner
+
+2. Tasks Table
+Columns: Task, Owner, Deadline, Status
+
+3. Support Table
+Columns: Customer, Issue, Priority, Status
